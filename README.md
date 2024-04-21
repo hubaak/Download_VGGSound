@@ -17,5 +17,5 @@ python download_vggsound.py
 ```
 and a directory named `VGGSound` should be create automatically, and data set will be downloaded in `VGGSound`.
 
-By the way, you can continue you downloading after interrupting with this code :).
+By the way, you can continue your downloading after interrupting with this code :).
 
