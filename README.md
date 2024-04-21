@@ -6,7 +6,7 @@ A very simple code to download [VGGSound](https://www.robots.ox.ac.uk/~vgg/data/
 ## Install Python Packages
 The code requires some python packages:
 ```bash
-pip install yt_dlp pandas tqdm ffmpeg-python
+pip install yt_dlp pandas tqdm
 ```
 
 Install `FFmpeg` in `Linux`:
