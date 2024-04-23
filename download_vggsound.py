@@ -130,7 +130,7 @@ with tqdm(total=len(df)) as pbar:
                         Error_reason = error_message[error_message.find(video_id_str) + len(video_id_str):].strip()
                         if Error_reason.find("\n") != -1:
                             Error_reason = Error_reason[:Error_reason.find("\n")]
-                        if 'Too Many Requests' not in Error_reason:
+                        if not any(error in Error_reason for error in ['Too Many Requests', 'Internal Server Error', 'Read timed out']):
                             with open(err_csv_path, "a") as file:
                                 file.write("{},\"{}\"\n".format(video_id, Error_reason.replace('\"', '')))
 
