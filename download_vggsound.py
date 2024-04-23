@@ -2,7 +2,7 @@ import os
 # Set proxy if you want
 # os.environ["http_proxy"] = "127.0.0.1:port"
 # os.environ["https_proxy"] = "127.0.0.1:port"
-num_threads = 8
+num_threads = 16
 
 import yt_dlp
 import subprocess
@@ -130,9 +130,9 @@ with tqdm(total=len(df)) as pbar:
                         Error_reason = error_message[error_message.find(video_id_str) + len(video_id_str):].strip()
                         if Error_reason.find("\n") != -1:
                             Error_reason = Error_reason[:Error_reason.find("\n")]
-                        print(Error_reason)
-                        with open(err_csv_path, "a") as file:
-                            file.write("{},\"{}\"\n".format(video_id, Error_reason))
+                        if 'Too Many Requests' not in Error_reason:
+                            with open(err_csv_path, "a") as file:
+                                file.write("{},\"{}\"\n".format(video_id, Error_reason.replace('\"', '')))
 
             pbar.update(1)
             

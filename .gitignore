@@ -2,6 +2,7 @@
 tmp/
 VGGSound/
 error.csv
+rm_error_429.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
